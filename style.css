@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url("musicbg.webp");
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+}
+
+.song-image{
+  border-radius: 80px;
+}
+
+.player-container {
+    background-color: #1e90ff;
+    background-image: url("./musicbg.webp");
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    min-height: 400px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    margin: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #ff0000;
+    border-radius: 5px;
+    transition: width 0.1s linear;
+}
+
+#currentSong {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.controls button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #e0e0e0;
+}
+
+.time-display {
+    text-align: center;
+    margin: 10px 0;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .player-container {
+        width: 85%;
+        min-height: 350px;
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .song-image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .controls {
+        gap: 10px;
+    }
+
+    .controls button {
+        padding: 8px 16px;
+    }
+
+    #currentSong {
+        font-size: 1.1em;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    .player-container {
+        width: 90%;
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .song-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .controls button {
+        padding: 6px 12px;
+    }
+
+    .time-display {
+        font-size: 0.9em;
+    }
+}
+
+/* Ensure minimum width */
+@media (max-width: 320px) {
+    .player-container {
+        width: 95%;
+        padding: 10px;
+        margin: 5px;
+    }
+}
+
+/* Height-based media queries */
+@media (max-height: 600px) {
+    .player-container {
+        min-height: 300px;
+    }
+
+    .song-image-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Fix for very tall screens */
+@media (min-height: 1000px) {
+    .player-container {
+        margin: 40px;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .player-container {
+        min-height: 280px;
+    }
+
+    .song-image-container {
+        width: 80px;
+        height: 80px;
+    }
+}
